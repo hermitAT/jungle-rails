@@ -1,2 +1,16 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h1>Administration Dashboard</h1>
+<hr>
+<div class="alert alert-info" style="width: 50%;" role="alert">
+  <ul class="list-group">
+    <%= link_to [:admin, :products] do %>
+      <li class="list-group-item">
+        <span class="badge"><%= @num_products %></span>
+        Number of products:
+      </li>
+    <% end %>
+      <li class="list-group-item">
+        <span class="badge"><%= @num_categories %></span>
+        Number of categories:
+      </li>
+  </ul>
+</div>
