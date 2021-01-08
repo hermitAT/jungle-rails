@@ -1,15 +1,11 @@
+<h2 class="text-center">Category: <%= category.name %></h3>
 <div class="panel panel-default products">
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th colspan="2" class="text-right">Category Name:</th>
-      <th colspan="2"><%= category.name %></th>
-    </tr>
-  </thead>
-  <thead>
-    <tr>
-      <th colspan="2" class="text-right">Number of Products:</th>
-      <th colspan="2"><%= category.products.size %></th>
+      <th colspan="2">Product</th>
+      <th>Price</th>
+      <th>Qty Remaining</th>
     </tr>
   </thead>
   <tbody>
@@ -17,5 +13,15 @@
       <%= render 'product', product: product %>
     <% end %>
   </tbody>
+  <tfoot>
+    <tr>
+      <th colspan="2" class="text-right">
+        TOTAL ITEMS:
+      </th>
+      <th colspan="2">
+        <%= category.products.size %>
+      </th>
+    </tr>
+  </tfoot>
 </table>
 </div>
