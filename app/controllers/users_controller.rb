@@ -7,10 +7,10 @@ class UsersController < ApplicationController
     user = User.new(user_params)
 
     if user.save
-      session[:user_id] = user.user_id
+      session[:user_id] = user.id
       redirect_to '/'
     else
-      redirect_to '/signup'
+      redirect_to '/users/new'
     end
   end
 
