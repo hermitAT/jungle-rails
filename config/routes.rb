@@ -12,6 +12,9 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:create, :show]
 
+  resources :users, only: [:create, :new]
+  resources :sessions, only: [:create, :new, :destroy]
+
   resource :about, controller: 'about', only: [:show]
 
   namespace :admin do
