@@ -7,11 +7,18 @@
     <h1>Thank you for your order!</h1>
     <p>
       We've received your order and will contact you as soon as your package
-      is shipped. You can find your purchaswe information below.
+      is shipped. You can find your purchase information below.
     </p>
-    <h3>Order Summary<h4>
-    <h5><%= @order.id %></h5>
+    <h3>Order Summary: ID <%= @order.id %></h4>
     <hr>
-    <%= @line_items.each do |line_item| %>
+    <% @line_items.each do |line_item| %>
+      <p class='d-inline'>
+        <%= line_item.quantity %>x
+        <%= Product.find_by(id: line_item.product_id).name %>
+        @ <%= humanized_money_with_symbol line_item.item_price_cents / 100 %>
+      </p>
+    <% end %>
+    <p>ORDER TOTAL: <%= humanized_money_with_symbol @order.total_cents / 100.0 %></p>
+    <hr>
   </body>
 </html>

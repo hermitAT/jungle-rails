@@ -8,6 +8,6 @@ class OrderMailer < ApplicationMailer
       Product.find(line_item.product_id)
     end
 
-    mail(to: @order.email, subject: `Order Confirmation - ID ##{@order.id}`)
+    mail(to: @order.email, subject: "Order ID #{@order.id} - Confirmation")
   end
 end
