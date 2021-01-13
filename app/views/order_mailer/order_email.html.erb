@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta 'content=text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thank you for your order!</h1>
+    <p>
+      We've received your order and will contact you as soon as your package
+      is shipped. You can find your purchaswe information below.
+    </p>
+    <h3>Order Summary<h4>
+    <h5><%= @order.id %></h5>
+    <hr>
+    <%= @line_items.each do |line_item| %>
+  </body>
+</html>
